@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>93B83D1F-B1D0-4CAB-ADE7-50241554F786</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Ball-in-maze</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>CDCBCB403D78EC1FF22AE925A102047F06FAD357</key>
+		<string>https://github.com/rraallvv/Ball-in-maze</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Ball-in-maze.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>CDCBCB403D78EC1FF22AE925A102047F06FAD357</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/rraallvv/Ball-in-maze</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>CDCBCB403D78EC1FF22AE925A102047F06FAD357</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>CDCBCB403D78EC1FF22AE925A102047F06FAD357</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Ball-in-maze</string>
+		</dict>
+	</array>
+</dict>
+</plist>

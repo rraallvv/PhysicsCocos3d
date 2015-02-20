@@ -194,7 +194,7 @@
 	
 	// step the physcis simulation
 	
-	_discreteDynamicsWorld->stepSimulation(1./60);
+	_discreteDynamicsWorld->stepSimulation(1./60, 0);
 	
 	
 	// update the Cocos3d models' transformations

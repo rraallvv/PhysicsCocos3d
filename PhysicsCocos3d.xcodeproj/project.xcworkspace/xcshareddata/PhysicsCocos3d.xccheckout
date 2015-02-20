@@ -10,14 +10,14 @@
 	<string>PhysicsCocos3d</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>CDCBCB403D78EC1FF22AE925A102047F06FAD357</key>
+		<key>30497125D4E7F406AAAD40CE07A1C3E3EE88B790</key>
 		<string>https://github.com/rraallvv/Ball-in-maze</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PhysicsCocos3d.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>CDCBCB403D78EC1FF22AE925A102047F06FAD357</key>
+		<key>30497125D4E7F406AAAD40CE07A1C3E3EE88B790</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>CDCBCB403D78EC1FF22AE925A102047F06FAD357</string>
+	<string>30497125D4E7F406AAAD40CE07A1C3E3EE88B790</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>CDCBCB403D78EC1FF22AE925A102047F06FAD357</string>
+			<string>30497125D4E7F406AAAD40CE07A1C3E3EE88B790</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PhysicsCocos3d</string>
 		</dict>

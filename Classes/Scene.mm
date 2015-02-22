@@ -169,6 +169,39 @@
  */
 -(void) addSceneContentAsynchronously {}
 
+-(void)dealloc {
+	// Remove constraints
+	for (int i=0;i<_constraints.size();i++) {
+		btTypedConstraint* constraint = _constraints[i];
+		_discreteDynamicsWorld->removeConstraint(constraint);
+		delete constraint;
+	}
+
+	// Remove collision objects
+	for (int i=0;i<_collisionObjects.size();i++) {
+		btCollisionObject* obj = _collisionObjects[i];
+		btRigidBody* body = btRigidBody::upcast(obj);
+		if (body && body->getMotionState()) {
+			delete body->getMotionState();
+		}
+		_discreteDynamicsWorld->removeCollisionObject( obj );
+		delete obj;
+	}
+
+	// Remove collision shapes
+	for (int i=0;i<_collisionShapes.size();i++) {
+		btCollisionShape* shape = _collisionShapes[i];
+		delete shape;
+	}
+
+	// Free the discrete dynamic world
+	delete _discreteDynamicsWorld;
+	delete _constraintSolver;
+	delete _collisionDispatcher;
+	delete _broadphase;
+	delete _collisionConfig;
+}
+
 
 #pragma mark Updating custom activity
 

@@ -40,7 +40,8 @@
 	CC3Camera *cam = [CC3Camera nodeWithName:@"Camera"];
 	cam.location = cc3v(0.0f, 0.0f, 40.0f);
 	cam.rotation = cc3v(0.0f, 0.0f, 0.0f);
-	cam.fieldOfView = 73.0f;
+	cam.fieldOfViewOrientation = CC3FieldOfViewOrientationHorizontal;
+	cam.fieldOfView = 68.0f;
 	[self addChild:cam];
 
 	CC3Light *lamp = [CC3Light nodeWithName:@"Lamp"];

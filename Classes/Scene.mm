@@ -7,6 +7,8 @@
 #import "CC3UtilityMeshNodes.h"
 
 
+#define RPM_TO_RADS(X)	(X*2.0f*M_PI/60.0f)
+
 @implementation testScene
 
 /**
@@ -36,15 +38,15 @@
 	self.backdrop = [CC3Backdrop nodeWithColor: ccc4f(0.65f, 0.65f, 0.65f, 1.0f)];
 
 	CC3Camera *cam = [CC3Camera nodeWithName:@"Camera"];
-	cam.location = cc3v(0, 0, -40);
-	cam.rotation = cc3v(-180, 0, -180);
-	cam.fieldOfView = 80;
+	cam.location = cc3v(0.0f, 0.0f, 40.0f);
+	cam.rotation = cc3v(0.0f, 0.0f, 0.0f);
+	cam.fieldOfView = 73.0f;
 	[self addChild:cam];
 
 	CC3Light *lamp = [CC3Light nodeWithName:@"Lamp"];
 	lamp.diffuseColor = ccc4f(0.64f, 0.09f, 0.09f, 1.0f);
 	lamp.specularColor = ccc4f(0.5f, 0.5f, 0.5f, 1.0f);
-	lamp.location = cc3v(0, 1, -1);
+	lamp.location = cc3v(0.0f, 1.0f, 1.0f);
 	lamp.isDirectionalOnly = YES;
 	[self addChild:lamp];
 
@@ -62,11 +64,11 @@
 
 	// Create the test shapes and bodies
 
-	[self addContainerAtPosition:cc3v(0, 0, 0)];
+	[self addContainerAtPosition:cc3v(0.0f, 0.0f, 0.0f)];
 
-	[self addBoxesAtPosition:cc3v(-4.5f, 0, 0)];
+	[self addBoxesAtPosition:cc3v(-4.5f, 0.0f, 0.0f)];
 
-	[self addBoxesAtPosition:cc3v(4.5f, 0, 0)];
+	[self addBoxesAtPosition:cc3v(4.5f, 0.0f, 0.0f)];
 
 
 	// In some cases, PODs are created with opacity turned off by mistake. To avoid the possible
@@ -404,26 +406,27 @@
 	CC3Node *container = [CC3Node node];
 
 	CC3BoxNode *boxL = [CC3BoxNode node];
-	[boxL populateAsSolidBox:CC3BoxMake(-1, -11, -11, 1, 11, 11)];
-	boxL.location = cc3v(position.x-10, position.y, position.z);
+	[boxL populateAsSolidBox:CC3BoxMake(-1.0f, -11.0f, -11.0f, 1.0f, 11.0f, 11.0f)];
+	boxL.location = cc3v(-10.0f, 0.0f, 0.0f);
 	[container addChild:boxL];
 
 	CC3BoxNode *boxR = [CC3BoxNode node];
-	[boxR populateAsSolidBox:CC3BoxMake(-1, -11, -11, 1, 11, 11)];
-	boxR.location = cc3v(position.x+10, position.y, position.z);
+	[boxR populateAsSolidBox:CC3BoxMake(-1.0f, -11.0f, -11.0f, 1.0f, 11.0f, 11.0f)];
+	boxR.location = cc3v(10.0f, 0.0f, 0.0f);
 	[container addChild:boxR];
 
 	CC3BoxNode *boxT = [CC3BoxNode node];
-	[boxT populateAsSolidBox:CC3BoxMake(-11, -1, -11, 11, 1, 11)];
-	boxT.location = cc3v(position.x, position.y-10, position.z);
+	[boxT populateAsSolidBox:CC3BoxMake(-11.0f, -1.0f, -11.0f, 11.0f, 1.0f, 11.0f)];
+	boxT.location = cc3v(0.0f, -10.0f, 0.0f);
 	[container addChild:boxT];
 
 	CC3BoxNode *boxB = [CC3BoxNode node];
-	[boxB populateAsSolidBox:CC3BoxMake(-11, -1, -11, 11, 1, 11)];
-	boxB.location = cc3v(position.x, position.y+10, position.z);
+	[boxB populateAsSolidBox:CC3BoxMake(-11.0f, -1.0f, -11.0f, 11.0f, 1.0f, 11.0f)];
+	boxB.location = cc3v(0.0f, 10.0f, 0.0f);
 	[container addChild:boxB];
 
 	[self addChild:container];
+	container.location = position;
 
 
 	// Create the container's rigid body
@@ -450,7 +453,7 @@
 	transform.setOrigin(btVector3(0.0f, -10.0f, 0.0f));
 	parentShape->addChildShape(transform, shape2);
 
-	transform.setOrigin(btVector3(0,10,0));
+	transform.setOrigin(btVector3(0.0f, 10.0f, 0.0f));
 	parentShape->addChildShape(transform, shape2);
 
 
@@ -493,7 +496,7 @@
 	btHingeConstraint* hinge = new btHingeConstraint(*body, btVector3(0.0f, 0.0f, 0.0f),  btVector3(0.0f, 0.0f, 1.0f));
 	_constraints.push_back(hinge);
 
-	hinge->enableAngularMotor(true, 4.0f*M_PI/60.0f, 1024.0f);
+	hinge->enableAngularMotor(true, -RPM_TO_RADS(2), 1024.0f);
 
 	_discreteDynamicsWorld->addConstraint(hinge);
 
@@ -509,7 +512,7 @@
 				// Create the graphics object
 
 				CC3BoxNode *box = [CC3BoxNode node];
-				[box populateAsSolidBox:CC3BoxMake(-1, -1, -1, 1, 1, 1)];
+				[box populateAsSolidBox:CC3BoxMake(-1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f)];
 				box.location = cc3v(position.x+3*(-1+i), position.y+3*(-1+j), position.z+3*(-1+k));
 				[self addChild:box];
 
